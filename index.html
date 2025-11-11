@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FitStudy Planner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+    }
+    header {
+      background-color: #1e90ff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background-color: #4682b4;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    nav a:hover, nav a.active {
+      background-color: #5a9bd6;
+    }
+
+    section {
+      display: none !important;
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    section.active {
+      display: block !important;
+    }
+
+    /* --- HOME --- */
+    #home {
+      background: linear-gradient(135deg, #1e90ff, #87cefa);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      border-radius: 8px;
+    }
+    .home-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      color: #333;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 { color: #1e90ff; }
+
+    /* --- ABOUT --- */
+    #about {
+      background: linear-gradient(135deg, #f0faff, #e6f2ff);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+    #about.active {
+      display: flex !important;
+      flex-wrap: wrap;
+    }
+    #about img {
+      width: 250px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .about-text {
+      max-width: 500px;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      text-align: left;
+    }
+    .about-text h2 { color: #1e90ff; }
+    .highlight-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .highlight {
+      background-color: #1e90ff;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+
+    /* --- SCHEDULE --- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th { background-color: #f2f2f2; }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #1e90ff;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FitStudy Planner</h1>
+    <p>Simple workouts for busy students</p>
+  </header>
+
+  <nav>
+    <a href="#" class="active" onclick="showPage('home', this)">Home</a>
+    <a href="#" onclick="showPage('about', this)">About</a>
+    <a href="#" onclick="showPage('schedule', this)">Schedule</a>
+  </nav>
+
+  <!-- PAGE 1: HOME -->
+  <section id="home" class="active">
+    <h2>Welcome to FitStudy Planner</h2>
+    <p>Balance study and fitness with short, easy workouts you can do anywhere.</p>
+    <div class="home-cards">
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>Focus</h3>
+        <p>Boost your concentration with exercise breaks between study sessions.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💪</div>
+        <h3>Move</h3>
+        <p>Quick 10–20 minute routines designed for student schedules — no gym needed.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧘‍♀️</div>
+        <h3>Balance</h3>
+        <p>Find harmony between your academic goals and personal wellness.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 2: ABOUT -->
+  <section id="about">
+    <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="Fitness Illustration">
+    <div class="about-text">
+      <h2>About FitStudy Planner</h2>
+      <p>FitStudy Planner helps students integrate fitness into their daily routine. Stay active and healthy while studying effectively!</p>
+      <div class="highlight-group">
+        <div class="highlight">🏋️‍♂️ Easy Workouts</div>
+        <div class="highlight">🕒 10–20 Minutes</div>
+        <div class="highlight">🎓 Student-Friendly</div>
+        <div class="highlight">📱 Watch & Follow</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: SCHEDULE -->
+  <section id="schedule">
+    <h2>Weekly Workout Schedule</h2>
+    <table>
+      <tr><th>Day</th><th>Workout</th><th>Duration</th></tr>
+      <tr><td>Monday</td><td>Full Body</td><td>15 min</td></tr>
+      <tr><td>Tuesday</td><td>Cardio & Stretch</td><td>20 min</td></tr>
+      <tr><td>Wednesday</td><td>Core Exercises</td><td>15 min</td></tr>
+      <tr><td>Thursday</td><td>Lower Body</td><td>20 min</td></tr>
+      <tr><td>Friday</td><td>Upper Body</td><td>15 min</td></tr>
+      <tr><td>Saturday</td><td>Yoga / Recovery</td><td>20 min</td></tr>
+      <tr><td>Sunday</td><td>Rest</td><td>-</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2025 FitStudy Planner</p>
+  </footer>
+
+  <script>
+    function showPage(pageId, element) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(pageId).classList.add("active");
+      document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+      element.classList.add("active");
+    }
+  </script>
+</body>
+</html>
